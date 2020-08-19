@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.parent{
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotate3d(1,1,1,360deg);
+				
+				animation: donghua 2s infinite;
+			}
+			@keyframes donghua{
+				from{
+					transform: rotate3d(1,1,1,0deg);
+				}
+				to{
+					transform: ratate3d(1,1,1,360deg);
+				}
+			}
+			.parent .child{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.9;
+			}
+			.front{
+				background: url(./img/front.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				
+				transform: translateZ(100px);
+				
+			}
+			
+			.back{
+				background: url(./img/back.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				transform: rotateY(180deg);
+				transform: translateZ(-100px);
+				
+			}
+			
+			.left{
+				background: url(./img/left.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				transform: rotateY(90deg) translateZ(100px);
+				
+			}
+			
+			.right{
+				background: url(./img/right.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				transform: rotateY(-90deg) translateZ(100px);
+				
+			}
+			
+			.top{
+				background: url(./img/top.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				transform: rotateX(90deg) translateZ(100px);
+				
+			}
+			
+			.bootom{
+				background: url(./img/bottom.jpg);
+				background-size: auto 100%;
+				background-position: center;
+				transform: rotateX(-90deg) translateZ(100px);
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child front"></div>
+			<div class="child back"></div>
+			<div class="child left"></div>
+			<div class="child right"></div>
+			<div class="child bootom"></div>
+			<div class="child top"></div>
+		</div>
+	</body>
+</html>
